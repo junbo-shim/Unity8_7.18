@@ -63,6 +63,7 @@ public class TerrainMap : TileMapController
 
         // 타일맵 중에 어느 정도를 바다로 교체할 것인지를 결정한다.
         const float CHANGE_PERCENTAGE = 15.0f;
+        Debug.LogFormat("allTileObjs empty?? {0}", allTileObjs == null);
         float correctChanverPercentage = allTileObjs.Count *
             (CHANGE_PERCENTAGE / 100.0f);
 
@@ -110,7 +111,8 @@ public class TerrainMap : TileMapController
                     break;
             
             }
-            // TODO: tempTerrain Setup 함수 필요함
+
+            tempTerrain.SetupTerrain(mapController, terrainType, loopCnt);
             tempTerrain.transform.SetAsFirstSibling();
             allTerrains.Add(tempTerrain);
             loopCnt += 1;

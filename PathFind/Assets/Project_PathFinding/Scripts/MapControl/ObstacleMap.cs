@@ -91,6 +91,26 @@ public class ObstacleMap : TileMapController
 
 
         // { 출발지와 목적지에 지물을 추가한다.
+        GameObject changeTilePrefab = ResManager.Instance.
+            obstaclePrefabs[RDefine.OBSTACLE_PREF_PLAIN_CASTLE];
+        GameObject tempChangeTile = default;
+
+        // 출발지와 목적지를 인스턴스화해서 캐싱하는 루프
+        for(int i = 0; i < 2; i++) 
+        {
+            tempChangeTile = Instantiate(changeTilePrefab, tileMap.transform);
+            tempChangeTile.name = string.Format("{0}_{1}",
+                changeTilePrefab.name, passableTerrains[i].tileIdx1D);
+
+            tempChangeTile.SetLocalScale(passableTerrains[i].transform.localScale);
+            tempChangeTile.SetLocalPos(passableTerrains[i].transform.localPosition);
+
+            // 출발지와 목적지를 캐싱한다.
+            castleObj[i] = tempChangeTile;
+            Add_Obstacle(tempChangeTile);
+
+            tempChangeTile = default;
+        }
         // } 출발지와 목적지에 지물을 추가한다.
     }
 
