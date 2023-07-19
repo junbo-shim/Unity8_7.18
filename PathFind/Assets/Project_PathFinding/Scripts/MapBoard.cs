@@ -17,6 +17,10 @@ public class MapBoard : MonoBehaviour
     {
         // { 매니저 스크립트를 초기화한다.
         ResManager.Instance.Create();
+
+        // PathFinder 초기화
+        PathFinder.Instance.Create();
+        PathFinder.Instance.mapBoard = this;
         // } 매니저 스크립트를 초기화한다.
 
         // { 맵에 지형을 초기화하여 배치한다.

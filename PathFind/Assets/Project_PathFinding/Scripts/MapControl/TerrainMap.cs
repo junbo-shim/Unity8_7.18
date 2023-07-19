@@ -62,7 +62,7 @@ public class TerrainMap : TileMapController
         // 정의 피킹해서 이름 프리펩 이름으로 바꾸어 놓을것
 
         // 타일맵 중에 어느 정도를 바다로 교체할 것인지를 결정한다.
-        const float CHANGE_PERCENTAGE = 15.0f;
+        const float CHANGE_PERCENTAGE = 30.0f;
         Debug.LogFormat("allTileObjs empty?? {0}", allTileObjs == null);
         float correctChanverPercentage = allTileObjs.Count *
             (CHANGE_PERCENTAGE / 100.0f);
