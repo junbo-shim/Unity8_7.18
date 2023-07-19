@@ -51,7 +51,8 @@ public class PathFinder : GSingleton<PathFinder>
         bool isNoWayToGo = false;
         // TODO: 알고리즘 정상작동 확인 후 조건문 수정할 예정
         // A* 알고리즘으로 길을 찾는 메인루프
-        while(loopIdx < 10) 
+        // while(loopIdx < 10) 
+        while(isFoundDestination == false && isNoWayToGo == false) 
         {
             // { Open list를 순회해서 가장 코스트가 낮은 노드를 선택한다.
             AstarNode minCostNode = default;
