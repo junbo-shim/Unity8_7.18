@@ -21,7 +21,7 @@ public class PathFinder : GSingleton<PathFinder>
     // ! 출발지와 목적지 정보로 길을 찾는 함수
     public void FindPath_Astar() 
     {
-        StartCoroutine(DelayFindPath_Astar(1.0f));
+        StartCoroutine(DelayFindPath_Astar(0.4f));
     }
 
 
